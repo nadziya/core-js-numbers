@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
@@ -234,8 +235,14 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let result = true;
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      result = false;
+    }
+  }
+  return result;
 }
 
 /**
@@ -253,8 +260,14 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  let result = value;
+  const changeValue = Number(value);
+  if (Number.isNaN(changeValue) === true) {
+    result = def;
+  } else if ( value === null) {
+    result = def;
+  return result;
 }
 
 /**
